@@ -1,4 +1,4 @@
-import { parseArgs, log, createBot, startBot, Bot } from "./deps.ts";
+import { Bot, createBot, log, parseArgs, startBot } from "./deps.ts";
 import { Config, loadConfig } from "./util.ts";
 
 /**
@@ -59,7 +59,7 @@ FLAGS:
       handlers: {
         console: new log.handlers.ConsoleHandler(
           flags.debug ? "DEBUG" : "INFO",
-          { formatter: "[{levelName}] {msg}" }
+          { formatter: "[{levelName}] {msg}" },
         ),
       },
       loggers: {
