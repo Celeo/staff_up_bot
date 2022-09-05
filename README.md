@@ -1,23 +1,34 @@
 # staff_up_bot
 
-Discord bot to alert when VATSIM airports have traffic but no controllers
-
 [![CI](https://github.com/Celeo/staff_up_bot/workflows/CI/badge.svg?branch=master)](https://github.com/Celeo/staff_up_bot/actions?query=workflow%3ACI)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 [![Runtime](https://img.shields.io/badge/runtime-Deno-orange)](https://deno.land/)
 
-A Discord bot.
+Discord bot to alert when VATSIM airports have traffic but no controllers.
+
+When running, the bot will check pilot positions every 2 minutes and for each configured entry,
+count the number of pilots within 5 nm of each airport. If the number of pilots within that
+distance is greater than the threshold, and the airport isn't being covered by an online
+controller matching the list, then a simple text message is sent to the Discord channel,
+specifying the airport, the number of pilots nearby, and the threshold.
 
 ## Installing
+
+### From binary
+
+Get a binary from the [repo](https://github.com/Celeo/staff_up_bot/releases).
+
+### From Source
 
 1. Install [Deno](https://deno.land)
 1. Install [just](https://github.com/casey/just)
 1. Clone the repo
+1. Build with `just compile`
 
 ## Using
 
 1. Copy the `config.example.json` file to `config.json` and populate
-1. Run with `just run`
+1. Run the binary
 
 ## Configuration
 
@@ -28,7 +39,7 @@ A Discord bot.
 - The "alerts" field is an array of alerts that you want the bot to look for. Fields:
   - "airport" - the ICAO identifier, i.e. "KSAN"
   - "trafficMinimum" - the minimum number of pilots nearby to trigger an alert for
-  - "coveringPositions" - a list of regex strings to check that may be staffing the airport
+  - "coveringPositions" - a list of regex strings to check that would be staffing the airport
 
 ### Example config
 
