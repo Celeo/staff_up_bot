@@ -38,7 +38,7 @@ Get a binary from the [repo](https://github.com/Celeo/staff_up_bot/releases).
 - The "channel" field is the Discord channel to which you want alerts to be sent
 - The "alerts" field is an array of alerts that you want the bot to look for. Fields:
   - "airport" - the ICAO identifier, i.e. "KSAN"
-  - "trafficMinimum" - the minimum number of pilots nearby to trigger an alert for
+  - "trafficThreshold" - the minimum number of pilots nearby to trigger an alert for
   - "coveringPositions" - a list of regex strings to check that would be staffing the airport
 
 ### Example config
@@ -50,12 +50,12 @@ Get a binary from the [repo](https://github.com/Celeo/staff_up_bot/releases).
   "alerts": [
     {
       "airport": "KSAN",
-      "trafficMinimum": 10,
+      "trafficThreshold": 10,
       "coveringPositions": ["SAN_.*TWR", "SAN_.*APP", "SCT_.*APP", "LAX_.*CTR"]
     },
     {
       "airport": "KLAX",
-      "trafficMinimum": 10,
+      "trafficThreshold": 10,
       "coveringPositions": [
         "LAX_.*TWR",
         "LAX_.*APP",
@@ -66,7 +66,7 @@ Get a binary from the [repo](https://github.com/Celeo/staff_up_bot/releases).
     },
     {
       "airport": "KLAS",
-      "trafficMinimum": 10,
+      "trafficThreshold": 10,
       "coveringPositions": ["LAS_.*TWR", "LAS_.*APP", "LAX_.*CTR"]
     }
   ]

@@ -90,7 +90,7 @@ async function checkForStaffingAlerts(
       alert.airport,
       MAX_DISTANCE,
     );
-    if (count < alert.trafficMinimum) {
+    if (count < alert.trafficThreshold) {
       log.debug(
         `${count} pilot(s) within ${MAX_DISTANCE} of ${alert.airport} - below alert level`,
       );
@@ -119,7 +119,7 @@ async function checkForStaffingAlerts(
     log.debug(`Sending alert for ${alert.airport}`);
     await sendMessage(bot, BigInt(config.channel), {
       content:
-        `Airport ${alert.airport} has ${count} pilot(s) nearby, above the threshold of ${alert.trafficMinimum}.`,
+        `Airport ${alert.airport} has ${count} pilot(s) nearby, above the threshold of ${alert.trafficThreshold}.`,
     });
     alertCooldown[alert.airport] = new Date().getTime() + ALERT_COOLDOWN;
   }

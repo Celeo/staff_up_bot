@@ -8,7 +8,7 @@ const CONFIG_FILE_NAME = "config.json";
  */
 export interface ConfigAlert {
   airport: string;
-  trafficMinimum: number;
+  trafficThreshold: number;
   coveringPositions: Array<string>;
 }
 
