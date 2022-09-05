@@ -20,14 +20,14 @@ const MAX_DISTANCE = 5.0;
  *
  * 30 minutes.
  */
-const ALERT_COOLDOWN = 30 * 60 * 1000;
+const ALERT_COOLDOWN = 2 * 60 * 1000;
 
 /**
  * Time awaited between checks of airport populations.
  *
  * 15 minutes.
  */
-const RUN_LOOP_INTERVAL = 5 * 60 * 1000;
+const RUN_LOOP_INTERVAL = 1 * 60 * 1000;
 
 /**
  * CLI flags.

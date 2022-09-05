@@ -16,8 +16,11 @@ debug:
 compile:
   @rm -f {{compiled_name}} {{compiled_name}}.zip {{compiled_name}}.tar.gz
   @deno compile {{permissions}} {{runfile}}
-  @zip -r {{compiled_name}}.zip {{compiled_name}} static
-  @tar -cpzf {{compiled_name}}.tar.gz {{compiled_name}} static
+  @zip -r {{compiled_name}}.zip {{compiled_name}}
+  @tar -cpzf {{compiled_name}}.tar.gz {{compiled_name}}
 
 clean:
   @rm -f {{compiled_name}} {{compiled_name}}.zip {{compiled_name}}.tar.gz
+
+deploy: clean compile
+  rsync -avz --progress {{compiled_name}}.tar.gz $SSH_HOST_NAME:/srv/
