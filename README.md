@@ -19,6 +19,39 @@ A Discord bot.
 1. Copy the `config.example.json` file to `config.json` and populate
 1. Run with `just run`
 
+### Example config
+
+```json
+{
+  "token": "abc123",
+  "channel": "456789",
+  "alerts": [
+    {
+      "airport": "KSAN",
+      "trafficMinimum": 10,
+      "coveringPositions": ["SAN_.*TWR", "SAN_.*APP", "SCT_.*APP", "LAX_.*CTR"]
+    },
+    {
+      "airport": "KLAX",
+      "trafficMinimum": 10,
+      "coveringPositions": [
+        "LAX_.*TWR",
+        "LAX_.*APP",
+        "LAX_.*DEP",
+        "SCT_.*APP",
+        "LAX_.*CTR"
+      ]
+    },
+    {
+      "airport": "KLAS",
+      "trafficMinimum": 10,
+      "coveringPositions": ["LAS_.*TWR", "LAS_.*APP", "LAX_.*CTR"]
+    }
+  ]
+}
+
+```
+
 ## License
 
 - Bot under MIT ([LICENSE](LICENSE)).
