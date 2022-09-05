@@ -19,6 +19,17 @@ A Discord bot.
 1. Copy the `config.example.json` file to `config.json` and populate
 1. Run with `just run`
 
+## Configuration
+
+### Fields
+
+- The "token" field is your [Discord bot token](https://discord.com/developers/applications)
+- The "channel" field is the Discord channel to which you want alerts to be sent
+- The "alerts" field is an array of alerts that you want the bot to look for. Fields:
+  - "airport" - the ICAO identifier, i.e. "KSAN"
+  - "trafficMinimum" - the minimum number of pilots nearby to trigger an alert for
+  - "coveringPositions" - a list of regex strings to check that may be staffing the airport
+
 ### Example config
 
 ```json
