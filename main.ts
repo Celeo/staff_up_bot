@@ -121,7 +121,8 @@ async function runLoop(bot: Bot, config: Config): Promise<void> {
       // send the alert and update the cooldown data
       log.debug(`Sending alert for ${alert.airport}`);
       sendMessage(bot, BigInt(config.channel), {
-        content: `Airport ${alert.airport} has ${count} pilots nearby`,
+        content:
+          `Airport ${alert.airport} has ${count} pilot(s) nearby, above the threshold of ${alert.trafficMinimum}.`,
       });
       alertCooldown[alert.airport] = new Date().getTime();
     }
