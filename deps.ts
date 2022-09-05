@@ -7,7 +7,9 @@ export {
   getV3Data,
   haversineDistance,
 } from "https://deno.land/x/vatsim_wrapper@v0.2.0/mod.ts";
-
+export type {
+  V3ResponseData,
+} from "https://deno.land/x/vatsim_wrapper@v0.2.0/mod.ts";
 export {
   createBot,
   createEventHandlers,
