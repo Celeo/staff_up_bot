@@ -149,11 +149,13 @@ if (import.meta.main) {
   const args = parseArgs(Deno.args);
   if (args.h == true || args.help === true) {
     console.log(`staff_up_bot
+
 USAGE:
-  server [FLAGS]
+  staff_up_bot [FLAGS]
+
 FLAGS:
-    -h, --help      Show this help
-    -d, --debug     Enable debug logging`);
+  -h, --help      Show this help
+  -d, --debug     Enable debug logging`);
   } else {
     const flags: CliFlags = { debug: args.d || args.debug || false };
     await log.setup({
