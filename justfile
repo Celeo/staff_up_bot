@@ -13,6 +13,9 @@ run-no-debug:
 debug:
   @deno run --inspect-brk=0.0.0.0:9229 {{permissions}} {{runfile}}
 
+test:
+  @deno test {{permissions}}
+
 compile:
   @rm -f {{compiled_name}} {{compiled_name}}.zip {{compiled_name}}.tar.gz
   @deno compile {{permissions}} {{runfile}}

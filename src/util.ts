@@ -1,10 +1,15 @@
-import { Pilot } from "https://deno.land/x/vatsim_wrapper@v0.2.0/models.ts";
-import { getAirportsMap, haversineDistance } from "./deps.ts";
+import { getAirportsMap, haversineDistance, Pilot } from "./deps.ts";
 
+/**
+ * Config file name on disk.
+ */
 const CONFIG_FILE_NAME = "config.json";
 
 /**
  * Config file alert entry.
+ *
+ * A config file will have `N` of these, which
+ * constitute the main functionality of the bot.
  */
 export interface ConfigAlert {
   airport: string;
