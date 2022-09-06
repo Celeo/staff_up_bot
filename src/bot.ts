@@ -110,7 +110,7 @@ FLAGS:
  * airport alerts to be sent to Discord, following the
  * specified alert configurations and the current VATSIM pilots.
  */
-async function checkForStaffingAlerts(
+export async function checkForStaffingAlerts(
   bot: BotWrapper,
   vatsimData: V3ResponseData,
   config: Config,

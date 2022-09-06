@@ -1,7 +1,7 @@
 import { getAirportsMap, haversineDistance, Pilot } from "./deps.ts";
 
 /**
- * Config file name on disk.
+ * Default config file name on disk.
  */
 const CONFIG_FILE_NAME = "config.json";
 
@@ -29,17 +29,17 @@ export interface Config {
 /**
  * Load the configuration file from disk.
  */
-export async function loadConfig(): Promise<Config> {
+export async function loadConfig(filename = CONFIG_FILE_NAME): Promise<Config> {
   let info;
   try {
-    info = await Deno.stat(CONFIG_FILE_NAME);
+    info = await Deno.stat(filename);
   } catch {
-    throw new Error(`Missing "${CONFIG_FILE_NAME}" file`);
+    throw new Error(`Missing "${filename}" file`);
   }
   if (!info.isFile) {
-    throw new Error(`${CONFIG_FILE_NAME} is not a file`);
+    throw new Error(`${filename} is not a file`);
   }
-  const raw = await Deno.readFile(CONFIG_FILE_NAME);
+  const raw = await Deno.readFile(filename);
   const text = new TextDecoder().decode(raw);
   return JSON.parse(text) as Config;
 }

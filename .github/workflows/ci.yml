@@ -17,5 +17,5 @@ jobs:
           deno-version: "~1.25"
       - name: Lint Deno Module
         run: deno fmt --check --ignore='README.md'
-      # - name: Test Deno Module
-      #   run: deno test --allow-all
+      - name: Test Deno Module
+        run: deno test --allow-all
