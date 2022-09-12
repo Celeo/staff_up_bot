@@ -35,7 +35,7 @@ Get a binary from the [repo](https://github.com/Celeo/staff_up_bot/releases).
 ### Fields
 
 - The "token" field is your [Discord bot token](https://discord.com/developers/applications)
-- The "channel" field is the Discord channel to which you want alerts to be sent
+- The "channel" field is the [Discord channel](https://turbofuture.com/internet/Discord-Channel-IDp) to which you want alerts to be sent
 - The "alerts" field is an array of alerts that you want the bot to look for. Fields:
   - "airport" - the ICAO identifier, i.e. "KSAN"
   - "trafficThreshold" - the minimum number of pilots nearby to trigger an alert for
