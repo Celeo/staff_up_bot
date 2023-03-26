@@ -1,6 +1,7 @@
 import {
   BotWrapper,
   createBot,
+  GatewayIntents,
   getV3Data,
   getVatsimInstance,
   log,
@@ -44,7 +45,7 @@ export async function main(): Promise<void> {
   const config = await startup();
   const bot = new BotWrapper(createBot({
     token: config.token,
-    intents: 0,
+    intents: GatewayIntents.GuildMessages,
     events: {
       ready() {
         log.info("Bot connected to Discord gateway");
